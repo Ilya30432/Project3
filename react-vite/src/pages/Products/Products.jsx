@@ -60,10 +60,10 @@ function Products() {
                 <th className="products__table-list">{elem.name}</th>
                 <th className="products__table-list">{elem.quantity}</th>
                 <th className="products__table-list">{elem.price}</th>
-                <div className="products__table-box">
+                <th className="products__table-box">
                   <BsFillPencilFill/>
                   <FaTrashCan />
-                </div>
+                </th>
               </tr>
             ))}
           </tbody>

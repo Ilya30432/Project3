@@ -1,0 +1,82 @@
+@use "../../style/vars" as *;
+.goods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  @include vieport-lg{
+    gap: 25px;
+  }
+  &__img {
+    flex: 1 1 100%;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include vieport-lg{
+        flex-direction: row;
+        gap: 20px;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    gap: 5px;
+    @include vieport-lg{
+        padding: 20px;
+        gap: 10px;
+    }
+  }
+
+  &__card-img{
+    width: 150px;
+    height: 150px;
+  }
+
+  &__card-text{
+    font-size: 20px;
+  }
+
+  &__card-cont {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__card-price{
+    color: rgba(252, 91, 0, 1);
+    font-size: 20px;
+    @include vieport-lg{
+        font-size: 25px;
+    }
+  }
+
+  &__card-quantity{
+    font-size: 15px;
+    @include vieport-lg{
+        font-size: 18px
+    }
+  }
+
+  &__card-send {
+    display: flex;
+    gap: 10px;
+    color: rgba(5, 188, 82, 1);
+    @include vieport-lg{
+        font-size: 20px;
+        gap: 20px;
+    }
+  }
+}
+
+.info{
+    min-height: 100vh;
+    background-color: rgb(68, 178, 111);
+    padding: 15px 10px 15px 10px;
+}

@@ -1,4 +1,5 @@
-@use "../Login/components/Card/Card.scss" as *;
+@use "../../style/vars" as *;
+ 
 .products {
   background-color: $text-color;
   height: 100%;
@@ -9,6 +10,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 15px;
+    @include vieport-lg {
+      justify-content: space-around;
+    }
   }
 
   &__img {
@@ -22,11 +26,20 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
+    @include vieport-lg {
+      gap: 10px;
+      padding: 10px 20px 10px 10px;
+      font-size: 20px;
+    }
   }
   &__btn > svg {
     color: black;
     width: 20px;
     height: 20px;
+    @include vieport-lg {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   &__item {
@@ -40,45 +53,66 @@
     font-size: 25px;
     color: white;
     padding-bottom: 20px;
+    font-size: 700;
+    @include vieport-lg {
+      font-size: 45px;
+    }
   }
 
   &__table {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @include vieport-lg {
+      display: table;
+      margin: 30px auto;
+      width: 80%;
+      max-width: 900px;
+    }
   }
-
 
   &__table-title {
     color: rgba(114, 105, 105, 1);
     padding: 0 6px;
+    @include vieport-lg {
+      padding: 10px 15px;
+    }
   }
 
   &__table-item {
     display: flex;
     justify-content: space-around;
+    @include vieport-lg {
+      display: table-row;
+    }
   }
   &__table-list {
     padding: 5px;
+    @include vieport-lg {
+      padding: 10px 15px;
+    }
   }
-  &__table-box{
+  &__table-box {
     display: flex;
     align-items: center;
     gap: 5px;
+  }
+  &__table-box > svg {
+    color: black;
   }
 }
 
 .bg-white {
   background: rgba(217, 217, 217, 1);
 }
-.bg-white > th{
-    color: rgba(255, 255, 255, 1);
+.bg-white > th {
+  color: rgba(255, 255, 255, 1);
 }
 
 .bg-green {
   background: rgba(60, 215, 140, 1);
 }
 
-.bg-green > th{
-    color: rgba(114, 105, 105, 1);
+.bg-green > th {
+  color: rgba(114, 105, 105, 1);
 }

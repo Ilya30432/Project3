@@ -1,0 +1,9 @@
+$bg-input: rgba(217, 217, 217, 1);
+$text-color: rgba(68, 178, 111, 1);
+
+$breakpoint-lg: 1024px;
+@mixin vieport-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
