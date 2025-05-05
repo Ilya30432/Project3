@@ -1,19 +1,20 @@
 @use "../../../../style/vars" as *;
 
 .card {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
   background-color: white;
   padding: 50px 50px 100px 50px;
 
   &__logo {
-    margin-bottom: 30px;
     @include vieport-lg {
       width: 200px;
       height: 50px;
     }
   }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__input::placeholder {
     color: $text-color;
   }
@@ -24,13 +25,14 @@
     border: none;
     outline: none;
     width: 100%;
-    @include vieport-lg{
+    @include vieport-lg {
       padding: 15px;
     }
   }
 
   &__input-box {
     position: relative;
+    margin-top: 40px
   }
   &__eye {
     position: absolute;
@@ -38,7 +40,7 @@
     right: 10px;
     transform: translateY(-50%);
     color: $text-color;
-    @include vieport-lg{
+    @include vieport-lg {
       width: 25px;
       height: 25px;
     }
@@ -48,7 +50,8 @@
     color: white;
     padding: 7px 10px;
     background: $text-color;
-    @include vieport-lg{
+    margin-top: 20px;
+    @include vieport-lg {
       padding: 12px 15px;
     }
   }
