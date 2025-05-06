@@ -8,8 +8,8 @@ function Form({ className }) {
   const [isPasswordVisible, setPasswordVisible] = useState(false);
   const [isPasswordErorr, setIsPasswordErorr] = useState(false);
   const [isNameErorr, setIsNameErorr] = useState(false);
-  const [isName, setIsName] = useState("");
-  const [isPassword, setIsPassword] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoginErorr, setIsLoginErorr] = useState(false);
 
   const handleClick = () => {
@@ -17,19 +17,20 @@ function Form({ className }) {
   };
 
   const validForm = () => {
-    if (!isName.trim()) setIsNameErorr(true);
-    if (!isPassword.trim()) setIsPasswordErorr(true);
+    if (!name.trim()) setIsNameErorr(true);
+    if (!password.trim()) setIsPasswordErorr(true);
 
-    return isName.trim() && isPassword.trim();
+    return name.trim() && password.trim();
   };
 
   const handleChange = (event) => {
-    if (event.target.name === "name") {
-      setIsName(event.target.value);
+    const {name, value} = event.target
+    if (name === "name") {
+      setName(value);
       setIsNameErorr(false);
     }
-    if (event.target.name === "password") {
-      setIsPassword(event.target.value);
+    if (name === "password") {
+      setPassword(value);
       setIsPasswordErorr(false);
     }
   };
@@ -42,11 +43,13 @@ function Form({ className }) {
     }
     // Имитация валидаций с беканда и обработки их
     const userExists = userInfo.some((user) => {
-      return user.name === isName && String(user.password) === isPassword;
+      return user.name === name && String(user.password) === password;
     });
 
     if (userExists) {
       setIsLoginErorr(false);
+      setName("")
+      setPassword("")
       localStorage.setItem("token", "12345");
     } else {
       setIsLoginErorr(true);
@@ -64,10 +67,11 @@ function Form({ className }) {
       <Input
         type="text"
         name="name"
+        value = {name}
         placeholder="User Name"
         className="card__input"
         classDiv="card__input-box"
-        onChange={handleChange}
+        onInputChange={handleChange}
       />
       {isNameErorr && <span> Please enter the name</span>}
       <Input
@@ -75,8 +79,9 @@ function Form({ className }) {
         placeholder="Password"
         name="password"
         className="card__input"
+        value = {password}
         classDiv="card__input-box"
-        onChange={handleChange}
+        onInputChange={handleChange}
         icon={
           isPasswordVisible ? (
             <FaEye onClick={handleClick} className="card__eye" />

@@ -1,7 +1,7 @@
-function Input({ type, placeholder, classDiv,name, className, icon , onChange}) {
+function Input({ value,type, placeholder, classDiv,name, className, icon , onInputChange}) {
   return (
     <div className={classDiv}>
-      <input  onChange = {onChange} type={type} name = {name} placeholder={placeholder} className={className} />
+      <input value={value} onChange = {onInputChange} type={type} name = {name} placeholder={placeholder} className={className} />
       {icon}
     </div>
   );
