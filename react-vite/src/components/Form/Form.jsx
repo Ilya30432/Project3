@@ -3,6 +3,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
+import { useNavigate } from "react-router";
 
 function Form({ className }) {
   const [isPasswordVisible, setPasswordVisible] = useState(false);
@@ -11,6 +12,7 @@ function Form({ className }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [isLoginErorr, setIsLoginErorr] = useState(false);
+  const navigate = useNavigate()
 
   const handleClick = () => {
     setPasswordVisible((prevIsPasswordVisible) => !prevIsPasswordVisible);
@@ -51,6 +53,7 @@ function Form({ className }) {
       setName("")
       setPassword("")
       localStorage.setItem("token", "12345");
+      navigate("/products")
     } else {
       setIsLoginErorr(true);
     }

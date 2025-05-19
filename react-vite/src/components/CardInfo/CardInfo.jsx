@@ -1,9 +1,9 @@
 import laptop from "../../pages/ProductsInfo/laptop.png";
 import { PiBasketLight } from "react-icons/pi";
 
-function CardInfo({data}) {
+function CardInfo({onClick, data}) {
   return (
-        <div className="goods__card">
+        <div onClick = {onClick} className="goods__card">
           <img
             className="goods__card-img"
             src={laptop}
