@@ -13,7 +13,7 @@ function CardInfo({onClick, data}) {
           />
           <p className="goods__card-text">{data.name}</p>
           <div className="goods__card-cont">
-            <p className="goods__card-price">{data.price}</p>
+            <p className="goods__card-price">{data.price}$</p>
             <p className="goods__card-quantity">Quantity: {data.quantity}</p>
           </div>
           <p className="goods__card-send">

@@ -1,0 +1,91 @@
+@use "../../style/vars" as *;
+
+.preview {
+  &__cont-img {
+    background-color: $text-color;
+    text-align: center;
+    position: relative;
+    padding: 10px 0;
+  }
+  &__img {
+    @include vieport-lg {
+      width: 250px;
+      height: 50px;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    @include vieport-lg {
+      width: 40px;
+      height: 40px;
+      left: 25px;
+    }
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 15px 20px 15px;
+    @include vieport-lg{
+     flex-direction: row;
+     flex-wrap: wrap;
+     gap: 30px;
+     padding: 20px 25px 20px 25px;
+    }
+  }
+  &__box-title {
+    font-size: 30px;
+    font-weight: 500;
+    @include vieport-lg {
+      font-size: 45px;
+      flex: 1 1 100%;
+    }
+  }
+  &__box-img {
+    @include vieport-lg {
+      width: 230px;
+      height: 150px;
+    }
+  }
+  &__cont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include vieport-lg{
+        gap: 20px;
+        flex: 1 1 70%;
+    }
+  }
+  &__cont-status {
+    color: rgba(60, 215, 140, 1);
+    font-size: 28px;
+    @include vieport-lg{
+        font-size: 36px;
+    }
+  }
+  &__cont-price {
+    color: rgba(252, 91, 0, 1);
+    font-size: 22px;
+    @include vieport-lg{
+        font-size: 27px;
+    }
+  }
+  &__cont-quantity {
+    font-size: 19px;
+    @include vieport-lg{
+        font-size: 25px;
+    }
+  }
+  &__box-text{
+    font-size: 18px;
+    @include vieport-lg{
+        font-size: 25px;
+        flex: 1 1 100%;
+    }
+  }
+}
