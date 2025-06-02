@@ -2,7 +2,7 @@
  
 .products {
   background-color: $text-color;
-  height: 100%;
+  min-height: 100vh;
   padding: 0 10px;
 
   &__box {
@@ -105,7 +105,7 @@
 .bg-white {
   background: rgba(217, 217, 217, 1);
 }
-.bg-white > th {
+.bg-white > td {
   color: rgba(255, 255, 255, 1);
 }
 
@@ -113,6 +113,6 @@
   background: rgba(60, 215, 140, 1);
 }
 
-.bg-green > th {
+.bg-green > td {
   color: rgba(114, 105, 105, 1);
 }

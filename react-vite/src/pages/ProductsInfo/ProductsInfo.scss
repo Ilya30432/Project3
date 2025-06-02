@@ -18,6 +18,8 @@
     @include vieport-lg{
         flex-direction: row;
         gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
   }
   &__card {
